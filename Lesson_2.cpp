@@ -7,7 +7,7 @@ using namespace std;
 #include <cmath>;
 #include <iomanip>;
 
-int konus() {
+int konus() { 
     float h;
     float R;
     float r;

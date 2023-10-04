@@ -8,7 +8,7 @@ using namespace std;
 #include <locale>;
 
 int zaem(float S, float p, float n) {
-    float r = (p * 1.0) / 100;
+    float r = (p * 1.0) / 100; 
     if (12 * (pow(1 + r, n) - 1) == 0) {
         cout << "Нет решения" << endl;
     }
@@ -132,7 +132,7 @@ int sort() {
     return 0;
 }
 
-
+ 
 
 int main3() {
     setlocale(LC_ALL, "Russian");

@@ -7,7 +7,7 @@ using namespace std;
 
 int name() {
     for (int i = 0; i <= 5; i++) {
-        std::cout << "Алексей\n";
+        std::cout << "Алексей\n"; 
     }
     return 0;
 }

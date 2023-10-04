@@ -7,7 +7,7 @@ using namespace std;
 #define _USE_MATH_DEFINES
 #include <math.h>;
 #include <windows.h>;
-#include <algorithm>
+#include <algorithm> 
 #include <array>
 #include <iomanip>;
 
