@@ -1,16 +1,16 @@
-#include <iostream>;
+﻿#include <iostream>;
 #include <clocale>;
 using namespace std;
 #include <math.h>;
 #include <fstream>;
 #include <string>;
-#include <Windows.h>;
 #include <locale>;
+#include <Windows.h>;
 
 int zaem(float S, float p, float n) {
     float r = (p * 1.0) / 100;
     if (12 * (pow(1 + r, n) - 1) == 0) {
-        cout << "Íåò ðåøåíèÿ" << endl;
+        cout << "Нет решения" << endl;
     }
     else {
         double m = (S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1));
@@ -33,7 +33,7 @@ int ssuda(float S, float m, float n) {
             }
         }
     }
-    cout << "Íåò ðåøåíèÿ" << endl;
+    cout << "Нет решения" << endl;
     return 0;
 }
 
@@ -79,27 +79,27 @@ int open_file2() {
     return 0;
 }
 
-
 bool compareChars(char c1, char c2) {
     locale loc("ru_RU.UTF-8");
-    if (c1 == '¸') {
-        char c = 'æ';
+    if (c1 == 'ё') {
+        char c = 'ж';
         if (tolower(c, loc) <= tolower(c2, loc)) {
             return false;
         }
-        else if (c2 != '¸') {
+        else if (c2 != 'ё') {
             return true;
         }
         else {
             return false;
         }
-    }
-    else if (c2 == '¸') {
-        char c = 'æ';
+
+    } else if (c2 == 'ё')
+    {
+        char c = 'ж';
         if (tolower(c, loc) <= tolower(c1, loc)) {
             return true;
         }
-        else if (c1 != '¸') {
+        else if (c1 != 'ё') {
             return false;
         }
         else {
@@ -113,53 +113,56 @@ void bubbleSort(string& str) {
     int n = str.length();
     for (int i = 0; i < n - 1; ++i) {
         for (int j = 0; j < n - i - 1; ++j) {
-            if (compareChars(str[j], str[j + 1])) {
+            if (compareChars(str[j], str[j+1])) {
                 swap(str[j], str[j + 1]);
             }
         }
     }
 }
 
-int sort() {
-    cout << "Ââåäèòå ñòðîêó äëÿ ñîðòèðîâêè: ";
+int sort1() {
+    cout << "Введите строку для сортировки: ";
     string input;
     getline(cin, input);
 
     bubbleSort(input);
 
-    cout << "Îòñîðòèðîâàííàÿ ñòðîêà: " << input << endl;
+    cout << "Отсортированная строка: " << input << endl;
 
     return 0;
 }
-
-
 
 int main3() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    //float S1, p, n1;
-    //cout << "Ââåäèòå S(çàéì), p(ïðîöåíò), n(ñðîê): ";
-    //cin >> S1 >> p >> n1;
-    //zaem(S1, p, n1);
-    //cout << " " << endl;
+    
+    float S1, p, n1;
+    cout << "Введите S(займ), p(процент), n(срок): ";
+    cin >> S1 >> p >> n1;
+    zaem(S1, p, n1);
+    cout << " " << endl;
 
 
-    //float S2, m, n2;
-    //cout << "Ââåäèòå S(çàéì), m(âûïëàòà), n(ñðîê): ";
-    //cin >> S2 >> m >> n2;
-    //ssuda(S2, m, n2);
-    //cout << " " << endl;
+    float S2, m, n2;
+    cout << "Введите S(займ), m(выплата), n(срок): ";
+    cin >> S2 >> m >> n2;
+    ssuda(S2, m, n2);
+    cout << " " << endl;
 
 
-    //open_file1();
-    //cout << " " << endl;
+    open_file1();
+    cout << " " << endl;
 
 
-    //open_file2();
-    //cout << " " << endl;
+    open_file2();
+    cout << " " << endl;
 
-    sort();
+    sort1();
 
     return 0;
 }
+
+//ё = 53429.5
+//е = 53429
+//ж = 53430
