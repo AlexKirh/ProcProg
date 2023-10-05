@@ -10,7 +10,7 @@ using namespace std;
 int zaem(float S, float p, float n) {
     float r = (p * 1.0) / 100; 
     if (12 * (pow(1 + r, n) - 1) == 0) {
-        cout << "Íåò ðåøåíèÿ" << endl;
+        cout << "ÃÃ¥Ã² Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿" << endl;
     }
     else {
         double m = (S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1));
@@ -33,7 +33,7 @@ int ssuda(float S, float m, float n) {
             }
         }
     }
-    cout << "Íåò ðåøåíèÿ" << endl;
+    cout << "ÃÃ¥Ã² Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã¿" << endl;
     return 0;
 }
 
@@ -82,24 +82,24 @@ int open_file2() {
 
 bool compareChars(char c1, char c2) {
     locale loc("ru_RU.UTF-8");
-    if (c1 == '¸') {
-        char c = 'æ';
+    if (c1 == 'Â¸') {
+        char c = 'Ã¦';
         if (tolower(c, loc) <= tolower(c2, loc)) {
             return false;
         }
-        else if (c2 != '¸') {
+        else if (c2 != 'Â¸') {
             return true;
         }
         else {
             return false;
         }
     }
-    else if (c2 == '¸') {
-        char c = 'æ';
+    else if (c2 == 'Â¸') {
+        char c = 'Ã¦';
         if (tolower(c, loc) <= tolower(c1, loc)) {
             return true;
         }
-        else if (c1 != '¸') {
+        else if (c1 != 'Â¸') {
             return false;
         }
         else {
@@ -121,13 +121,13 @@ void bubbleSort(string& str) {
 }
 
 int sort() {
-    cout << "Ââåäèòå ñòðîêó äëÿ ñîðòèðîâêè: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã²Ã°Ã®ÃªÃ³ Ã¤Ã«Ã¿ Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢ÃªÃ¨: ";
     string input;
     getline(cin, input);
 
     bubbleSort(input);
 
-    cout << "Îòñîðòèðîâàííàÿ ñòðîêà: " << input << endl;
+    cout << "ÃŽÃ²Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã Ã¿ Ã±Ã²Ã°Ã®ÃªÃ : " << input << endl;
 
     return 0;
 }
@@ -139,14 +139,14 @@ int main3() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     //float S1, p, n1;
-    //cout << "Ââåäèòå S(çàéì), p(ïðîöåíò), n(ñðîê): ";
+    //cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ S(Ã§Ã Ã©Ã¬), p(Ã¯Ã°Ã®Ã¶Ã¥Ã­Ã²), n(Ã±Ã°Ã®Ãª): ";
     //cin >> S1 >> p >> n1;
     //zaem(S1, p, n1);
     //cout << " " << endl;
 
 
     //float S2, m, n2;
-    //cout << "Ââåäèòå S(çàéì), m(âûïëàòà), n(ñðîê): ";
+    //cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ S(Ã§Ã Ã©Ã¬), m(Ã¢Ã»Ã¯Ã«Ã Ã²Ã ), n(Ã±Ã°Ã®Ãª): ";
     //cin >> S2 >> m >> n2;
     //ssuda(S2, m, n2);
     //cout << " " << endl;
