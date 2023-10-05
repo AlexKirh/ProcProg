@@ -7,7 +7,7 @@ using namespace std;
 #include <Windows.h>;
 #include <locale>;
 
-int zaem(float S, float p, float n) {
+int zaem(float S, float p, float n) { 
     float r = (p * 1.0) / 100;
     if (12 * (pow(1 + r, n) - 1) == 0) {
         cout << "Нет решения" << endl;

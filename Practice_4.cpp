@@ -9,7 +9,7 @@
 #include <windows.h>;
 #include <algorithm>
 #include <array>
-#include <iomanip>;
+#include <iomanip>; 
 
 int file() {
     ofstream outFile("numbers.txt");

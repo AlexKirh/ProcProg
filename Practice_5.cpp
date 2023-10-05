@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
-
+ 
 int evclid() { 
     int a, b;
     cout << "Введите два числа: ";
