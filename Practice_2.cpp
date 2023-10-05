@@ -1,4 +1,4 @@
-#include <iostream>;
+ï»¿#include <iostream>;
 #include <clocale>;
 using namespace std;
 
@@ -7,27 +7,27 @@ using namespace std;
 #include <cmath>;
 #include <iomanip>;
 
-int konus() { 
+int konus() {
     float h;
     float R;
     float r;
 
-    cout << "Ââåäèòå âûñîòó, Âåðõíèé ðàäèóñ, íèæíèé ðàäèóñ: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ, Ð’ÐµÑ€Ñ…Ð½Ð¸Ð¹ Ñ€Ð°Ð´Ð¸ÑƒÑ, Ð½Ð¸Ð¶Ð½Ð¸Ð¹ Ñ€Ð°Ð´Ð¸ÑƒÑ: ";
     cin >> h >> R >> r;
 
     if (h <= 0 || R <= 0 || r <= 0) {
-        cout << "Íåïðàâèëüíî ââåäåíû äàííûå" << endl;
+        cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð´Ð°Ð½Ð½Ñ‹Ðµ" << endl;
         return 0;
     }
     else if (r >= R) {
-        cout << "âõîäûå äàííûå íå îáðàçóþò óñå÷åííûé êîíóñ" << endl;
+        cout << "Ð²Ñ…Ð¾Ð´Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð½Ðµ Ð¾Ð±Ñ€Ð°Ð·ÑƒÑŽÑ‚ ÑƒÑÐµÑ‡ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑƒÑ" << endl;
         return 0;
     }
 
     float l = pow(pow(R - r, 2) + pow(h, 2), 0.5);
     double V = (M_PI * h * (R * R + R * r + r * r)) / 3;
     double S = M_PI * (R * R + (R + r) * l + r * r);
-    cout << setprecision(15) << "Îáúåì = " << V << "\nÏëîùàäü = " << S << endl;
+    cout << setprecision(15) << "ÐžÐ±ÑŠÐµÐ¼ = " << V << "\nÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ = " << S << endl;
     return 0;
 }
 
@@ -35,11 +35,11 @@ int razvetvlenie() {
     int x;
     int a;
 
-    cout << "Ââåäèòå x è a: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ x Ð¸ a: ";
     cin >> x >> a;
 
     if (x == 0) {
-        cout << "õ íå ìîæåò áûòü ðàâåí íóëþ" << endl;
+        cout << "Ñ… Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ñ€Ð°Ð²ÐµÐ½ Ð½ÑƒÐ»ÑŽ" << endl;
         return 0;
     }
 
@@ -52,7 +52,7 @@ int razvetvlenie() {
         return 0;
     }
     else {
-        cout << "Íåò ðåøåíèé" << endl;
+        cout << "ÐÐµÑ‚ Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹" << endl;
         return 0;
     }
     return 0;
@@ -63,7 +63,7 @@ int func() {
     int y;
     int b;
 
-    cout << "Ââåäèòå õ, y, b: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ…, y, b: ";
     cin >> x >> y >> b;
 
     if (b - y > 0 && b - x >= 0) {
@@ -71,7 +71,7 @@ int func() {
         return 0;
     }
     else {
-        cout << "Íåò ðåøåíèé" << endl;
+        cout << "ÐÐµÑ‚ Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹" << endl;
         return 0;
     }
     return 0;
@@ -79,7 +79,7 @@ int func() {
 
 int poriadok() {
     int N;
-    cout << "Ââåäèòå N: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ N: ";
     cin >> N;
 
     if (N <= 0) {

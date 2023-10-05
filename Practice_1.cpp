@@ -1,13 +1,13 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <clocale>
 using namespace std;
-#include <climits> /* пределы*/
+#include <climits> /* РїСЂРµРґРµР»С‹*/
 #include <math.h>
 #include <string>
 
 int name() {
     for (int i = 0; i <= 5; i++) {
-        std::cout << "Алексей\n"; 
+        std::cout << "РђР»РµРєСЃРµР№\n";
     }
     return 0;
 }
@@ -21,7 +21,7 @@ int stuff() {
 
 }
 
-int arifmetika() { /* Арифметика */
+int arifmetika() { /* РђСЂРёС„РјРµС‚РёРєР° */
     float x;
     float y;
     cin >> x >> y;
@@ -29,7 +29,7 @@ int arifmetika() { /* Арифметика */
 
         return 0;
     }
-    cout << "Сумма: " << x + y << "\nПроизведение: " << x * y << "\nРазность: " << x - y << "\nДеление: " << x / y << endl;
+    cout << "РЎСѓРјРјР°: " << x + y << "\nРџСЂРѕРёР·РІРµРґРµРЅРёРµ: " << x * y << "\nР Р°Р·РЅРѕСЃС‚СЊ: " << x - y << "\nР”РµР»РµРЅРёРµ: " << x / y << endl;
     return 0;
 }
 
@@ -38,10 +38,10 @@ int yravn() {
     float c;
     cin >> b >> c;
     if (b == 0 && c == 0) {
-        cout << "Бесконечно много решений";
+        cout << "Р‘РµСЃРєРѕРЅРµС‡РЅРѕ РјРЅРѕРіРѕ СЂРµС€РµРЅРёР№";
     }
     else if (b == 0) {
-        cout << "Нет решений" << endl;
+        cout << "РќРµС‚ СЂРµС€РµРЅРёР№" << endl;
     }
     else
     {
@@ -61,7 +61,7 @@ int uravn2() {
         float D = b * b - 4 * a * c;
 
         if (D < 0) {
-            cout << "Нет корней" << endl;
+            cout << "РќРµС‚ РєРѕСЂРЅРµР№" << endl;
         }
         else if (D == 0) {
             cout << (-1 * b) / (2 * a) << endl;
@@ -74,7 +74,7 @@ int uravn2() {
     }
     else {
         if (a == 0 && b == 0 && c == 0) {
-            cout << "Бесконечно много решений";
+            cout << "Р‘РµСЃРєРѕРЅРµС‡РЅРѕ РјРЅРѕРіРѕ СЂРµС€РµРЅРёР№";
         }
         else if (a == 0 && b != 0 && c != 0) {
             cout << (-1 * c) / b;
@@ -84,13 +84,13 @@ int uravn2() {
             if (x >= 0) {
                 cout << "x1 = " << pow(x, 0.5) << "\nx2 = " << -1 * pow(x, 0.5);
             }
-            else { cout << "нет решений"; }
+            else { cout << "РЅРµС‚ СЂРµС€РµРЅРёР№"; }
         }
         else if (a != 0 && b != 0 && c == 0) {
             cout << "x1 = 0\nx2 == " << (-1 * b) / a;
         }
         else if (a == 0 && b == 0 && c != 0) {
-            cout << "Нет решений";
+            cout << "РќРµС‚ СЂРµС€РµРЅРёР№";
         }
         else if (a != 0 && b == 0 && c == 0) {
             cout << "x = 0";
@@ -109,16 +109,16 @@ int lamp()
     bool shtory;
     bool lampa;
 
-    cout << "Который сейчас час? ";
+    cout << "РљРѕС‚РѕСЂС‹Р№ СЃРµР№С‡Р°СЃ С‡Р°СЃ? ";
     cin >> chas;
 
     if (chas >= 23 || chas <= 0) {
-        cout << "Error: несуществующий час";
+        cout << "Error: РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ С‡Р°СЃ";
         return 0;
     }
 
     string shtory1;
-    cout << "Открыты ли шторы? Y/N ";
+    cout << "РћС‚РєСЂС‹С‚С‹ Р»Рё С€С‚РѕСЂС‹? Y/N ";
     cin >> shtory1;
 
     if (shtory1 == "Y") {
@@ -128,12 +128,12 @@ int lamp()
         shtory = false;
     }
     else {
-        cout << "Error: неправильный ввод данных";
+        cout << "Error: РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІРІРѕРґ РґР°РЅРЅС‹С…";
         return 0;
     }
 
     string lampa1;
-    cout << "Включенв ли лампа? Y/N ";
+    cout << "Р’РєР»СЋС‡РµРЅРІ Р»Рё Р»Р°РјРїР°? Y/N ";
     cin >> lampa1;
 
     if (lampa1 == "Y") {
@@ -143,28 +143,28 @@ int lamp()
         lampa = false;
     }
     else {
-        cout << "Error: неправильный ввод данных";
+        cout << "Error: РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІРІРѕРґ РґР°РЅРЅС‹С…";
         return 0;
     }
 
     if (chas <= 18 && chas >= 4) {
         if (shtory == true) {
-            cout << "Светло";
+            cout << "РЎРІРµС‚Р»Рѕ";
         }
         else if (shtory == false && lampa == true)
         {
-            cout << "Светло";
+            cout << "РЎРІРµС‚Р»Рѕ";
         }
         else {
-            cout << "Темно";
+            cout << "РўРµРјРЅРѕ";
         }
     }
     else {
         if (lampa == true) {
-            cout << "Светло";
+            cout << "РЎРІРµС‚Р»Рѕ";
         }
         else {
-            cout << "Темно";
+            cout << "РўРµРјРЅРѕ";
         }
     }
 
@@ -175,19 +175,19 @@ int lamp()
 int main1() {
     setlocale(LC_ALL, "Russian");
 
-    cout << "Арифметика \nВведите x, y: ";
+    cout << "РђСЂРёС„РјРµС‚РёРєР° \nР’РІРµРґРёС‚Рµ x, y: ";
     arifmetika();
     cout << endl;
 
-    cout << "Уравнение bx + c = 0\nВведите b, c: ";
+    cout << "РЈСЂР°РІРЅРµРЅРёРµ bx + c = 0\nР’РІРµРґРёС‚Рµ b, c: ";
     yravn();
     cout << " " << endl;
 
-    cout << "Еще уравнение ax2 + bx + c = 0\nВведите a, b, c: ";
+    cout << "Р•С‰Рµ СѓСЂР°РІРЅРµРЅРёРµ ax2 + bx + c = 0\nР’РІРµРґРёС‚Рµ a, b, c: ";
     uravn2();
     cout << " " << endl;
 
-    cout << "Лампа со шторой" << endl;
+    cout << "Р›Р°РјРїР° СЃРѕ С€С‚РѕСЂРѕР№" << endl;
     lamp();
     return 0;
 }

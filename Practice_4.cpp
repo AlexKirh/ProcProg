@@ -1,4 +1,4 @@
-using namespace std;
+ï»¿using namespace std;
 #include <iostream>;
 #include <clocale>;
 #include <fstream>;
@@ -7,7 +7,7 @@ using namespace std;
 #define _USE_MATH_DEFINES
 #include <math.h>;
 #include <windows.h>;
-#include <algorithm> 
+#include <algorithm>
 #include <array>
 #include <iomanip>;
 
@@ -24,7 +24,7 @@ int file() {
         }
 
         outFile.close();
-        cout << "Ôàéë óñïåøíî ñîçäàí è ÷èñëà çàïèñàíû.\n×èñëà: ";
+        cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ð·Ð´Ð°Ð½ Ð¸ Ñ‡Ð¸ÑÐ»Ð° Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ñ‹.\nÐ§Ð¸ÑÐ»Ð°: ";
         for (int i = 0; i < 10; i++)
         {
             cout << numbers[i] << " ";
@@ -32,7 +32,7 @@ int file() {
         cout << endl;
     }
     else {
-        cout << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ çàïèñè." << endl;
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸." << endl;
         return 0;
     }
 
@@ -47,10 +47,10 @@ int file() {
 
         inFile.close();
 
-        cout << "Ñóììà ÷èñåë: " << sum << endl;
+        cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ñ‡Ð¸ÑÐµÐ»: " << sum << endl;
     }
     else {
-        cout << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ ÷òåíèÿ." << endl;
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ." << endl;
         return 0;
     }
 
@@ -90,34 +90,34 @@ int areas() {
     double length, width, base, height, radius;
     
     int c;
-    cout << "Êàêóþ ïëîùàäü ñ÷èòàåì? 1 - ïðÿìîóãîëüíèê, 2 = òðåóãîëüíèê, 3 - êðóã: ";
+    cout << "ÐšÐ°ÐºÑƒÑŽ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ ÑÑ‡Ð¸Ñ‚Ð°ÐµÐ¼? 1 - Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº, 2 = Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº, 3 - ÐºÑ€ÑƒÐ³: ";
     cin >> c;
 
     switch (c)
     {
         case 1:
         {
-            cout << "Ââåäèòå äëèíó è øèðèíó ïðÿìîóãîëüíèêà: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ Ð¸ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: ";
             cin >> length >> width;
             double rectangleArea = calculateRectangleArea(length, width);
-            cout << "Ïëîùàäü ïðÿìîóãîëüíèêà: " << rectangleArea << endl;
+            cout << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangleArea << endl;
             break;
         }
 
         case 2:
         {
-            cout << "Ââåäèòå îñíîâàíèå è âûñîòó òðåóãîëüíèêà: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾ÑÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¸ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: ";
             cin >> base >> height;
             double triangleArea = calculateTriangleArea(base, height);
-            cout << "Ïëîùàäü òðåóãîëüíèêà: " << triangleArea << endl;
+            cout << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << triangleArea << endl;
             break;
         }
         case 3:
         {
-            cout << "Ââåäèòå ðàäèóñ êðóãà: ";
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð´Ð¸ÑƒÑ ÐºÑ€ÑƒÐ³Ð°: ";
             cin >> radius;
             double circleArea = calculateCircleArea(radius);
-            cout << "Ïëîùàäü êðóãà: " << circleArea << endl;
+            cout << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ ÐºÑ€ÑƒÐ³Ð°: " << circleArea << endl;
             break;
         }
         default: break;
@@ -175,7 +175,7 @@ int sinus() {
 
 int RomeToArabic() {
     string s;
-    cout << "Ââåäèòå ðèìñêîå ÷èñëî: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð¸Ð¼ÑÐºÐ¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
     cin >> s;
     char letters[7] = { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
 
@@ -185,7 +185,7 @@ int RomeToArabic() {
             continue;
         }
         else {
-            cout << "Íåïðàâèëüíûé ââîä" << endl;
+            cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´" << endl;
             return 0;
         }
     }
@@ -233,7 +233,7 @@ int RomeToArabic() {
             fin += 1000;
         }
         else {
-            cout << "Íåïðàâèëüíûé ââîä ÷èñëà: " << i + 1 << endl;
+            cout << "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´ Ñ‡Ð¸ÑÐ»Ð°: " << i + 1 << endl;
             return 0;
         }
     }
@@ -245,7 +245,7 @@ int RomeToArabic() {
 
 int generator() {
     int m, b, c, i;
-    cout << "Ââåäèòå m, b, c, i: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ m, b, c, i: ";
     cin >> m >> b >> c >> i;
 
     int* chisla{ new int[i] {0} };
@@ -308,7 +308,7 @@ int matrix() {
         }
     }
 
-    cout << "Ïðîäàâåö " << highSeller << " âûðó÷èë áîëüøå âñåãî äåíåã ñ ïðîäàæè: " << maxProfit << "\nÏðîäàâåö " << lowSeller << " âûðó÷èë ìåíüøå âñåãî äåíåã ñ ïðîäàæè: " << minProfit << endl;
+    cout << "ÐŸÑ€Ð¾Ð´Ð°Ð²ÐµÑ† " << highSeller << " Ð²Ñ‹Ñ€ÑƒÑ‡Ð¸Ð» Ð±Ð¾Ð»ÑŒÑˆÐµ Ð²ÑÐµÐ³Ð¾ Ð´ÐµÐ½ÐµÐ³ Ñ Ð¿Ñ€Ð¾Ð´Ð°Ð¶Ð¸: " << maxProfit << "\nÐŸÑ€Ð¾Ð´Ð°Ð²ÐµÑ† " << lowSeller << " Ð²Ñ‹Ñ€ÑƒÑ‡Ð¸Ð» Ð¼ÐµÐ½ÑŒÑˆÐµ Ð²ÑÐµÐ³Ð¾ Ð´ÐµÐ½ÐµÐ³ Ñ Ð¿Ñ€Ð¾Ð´Ð°Ð¶Ð¸: " << minProfit << endl;
 
 
     int highSeller2 = 0;
@@ -327,24 +327,24 @@ int matrix() {
         }
     }
 
-    cout << "Ïðîäàâåö " << highSeller2 << " âûðó÷èë áîëüøå âñåãî êîìèñèîííûõ ñ ïðîäàæè: " << maxComm << "\nÏðîäàâåö " << lowSeller2 << " âûðó÷èë ìåíüøå âñåãî êîìèñèîííûõ ñ ïðîäàæè: " << minComm << endl;
+    cout << "ÐŸÑ€Ð¾Ð´Ð°Ð²ÐµÑ† " << highSeller2 << " Ð²Ñ‹Ñ€ÑƒÑ‡Ð¸Ð» Ð±Ð¾Ð»ÑŒÑˆÐµ Ð²ÑÐµÐ³Ð¾ ÐºÐ¾Ð¼Ð¸ÑÐ¸Ð¾Ð½Ð½Ñ‹Ñ… Ñ Ð¿Ñ€Ð¾Ð´Ð°Ð¶Ð¸: " << maxComm << "\nÐŸÑ€Ð¾Ð´Ð°Ð²ÐµÑ† " << lowSeller2 << " Ð²Ñ‹Ñ€ÑƒÑ‡Ð¸Ð» Ð¼ÐµÐ½ÑŒÑˆÐµ Ð²ÑÐµÐ³Ð¾ ÐºÐ¾Ð¼Ð¸ÑÐ¸Ð¾Ð½Ð½Ñ‹Ñ… Ñ Ð¿Ñ€Ð¾Ð´Ð°Ð¶Ð¸: " << minComm << endl;
 
 
     double money = 0;
     for (int i = 0; i < 3; i++) {
         money += C[i][0];
     }
-    cout << "Îáùàÿ ñóììà äåíåã, âûðó÷åííûõ çà ïðîäàííûå òîâàðû: " << money << endl;
+    cout << "ÐžÐ±Ñ‰Ð°Ñ ÑÑƒÐ¼Ð¼Ð° Ð´ÐµÐ½ÐµÐ³, Ð²Ñ‹Ñ€ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ñ… Ð·Ð° Ð¿Ñ€Ð¾Ð´Ð°Ð½Ð½Ñ‹Ðµ Ñ‚Ð¾Ð²Ð°Ñ€Ñ‹: " << money << endl;
 
 
     double coms = 0;
     for (int i = 0; i < 3; i++) {
         coms += C[i][1];
     }
-    cout << "Âñåãî êîìèññèîííûõ ïðîäàâöû ïîëó÷èëè: " << coms << endl;
+    cout << "Ð’ÑÐµÐ³Ð¾ ÐºÐ¾Ð¼Ð¸ÑÑÐ¸Ð¾Ð½Ð½Ñ‹Ñ… Ð¿Ñ€Ð¾Ð´Ð°Ð²Ñ†Ñ‹ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð»Ð¸: " << coms << endl;
 
 
-    cout << "Îáùàÿ ñóììà äåíåã, ïðîøåäøàÿ ðóêè ïðîäàâöîâ: " << coms + money << endl;
+    cout << "ÐžÐ±Ñ‰Ð°Ñ ÑÑƒÐ¼Ð¼Ð° Ð´ÐµÐ½ÐµÐ³, Ð¿Ñ€Ð¾ÑˆÐµÐ´ÑˆÐ°Ñ Ñ€ÑƒÐºÐ¸ Ð¿Ñ€Ð¾Ð´Ð°Ð²Ñ†Ð¾Ð²: " << coms + money << endl;
 
     return 0;
 }
@@ -441,7 +441,7 @@ string int_to_char(int symbol) {
 int converter() {
     string x;
     int ss_in, ss_out;
-    cout << "Ââåäèòå ÷èñëî, åãî ÑÑ ì CC, â êîòðóþ íóæíî ïåðåâåñòè: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾, ÐµÐ³Ð¾ Ð¡Ð¡ Ð¼ CC, Ð² ÐºÐ¾Ñ‚Ñ€ÑƒÑŽ Ð½ÑƒÐ¶Ð½Ð¾ Ð¿ÐµÑ€ÐµÐ²ÐµÑÑ‚Ð¸: ";
     cin >> x >> ss_in >> ss_out;
 
     int decX = 0;
@@ -469,7 +469,7 @@ int main4() {
     /*file();
 
     float x;
-    cout << "Ââåäèòå x: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ x: ";
     cin >> x;
     sign(x);
 
