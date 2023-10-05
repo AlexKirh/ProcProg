@@ -8,7 +8,7 @@ using namespace std;
 int evclid() {
     int a, b;
     cout << "Введите два числа: ";
-    cin >> a >> b;
+    cin >> a >> b; 
 
     int gcd_div = 1;
     for (int i = 2; i <= min(a, b); i++) {
