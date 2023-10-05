@@ -9,7 +9,7 @@
 #include <windows.h>;
 #include <algorithm>
 #include <array>
-#include <iomanip>; 
+#include <iomanip>;
 
 int file() {
     ofstream outFile("numbers.txt");
@@ -24,7 +24,11 @@ int file() {
         }
 
         outFile.close();
+<<<<<<< HEAD
         cout << "Файл успешно создан и числа записаны.\nЧисла: ";
+=======
+        cout << "Ôàéë óñïåøíî ñîçäàí è ÷èñëà çàïèñàíû.\n×èñëà: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
         for (int i = 0; i < 10; i++)
         {
             cout << numbers[i] << " ";
@@ -32,7 +36,11 @@ int file() {
         cout << endl;
     }
     else {
+<<<<<<< HEAD
         cout << "Ошибка при открытии файла для записи." << endl;
+=======
+        cout << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ çàïèñè." << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
         return 0;
     }
 
@@ -47,10 +55,17 @@ int file() {
 
         inFile.close();
 
+<<<<<<< HEAD
         cout << "Сумма чисел: " << sum << endl;
     }
     else {
         cout << "Ошибка при открытии файла для чтения." << endl;
+=======
+        cout << "Ñóììà ÷èñåë: " << sum << endl;
+    }
+    else {
+        cout << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ ÷òåíèÿ." << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
         return 0;
     }
 
@@ -90,34 +105,59 @@ int areas() {
     double length, width, base, height, radius;
     
     int c;
+<<<<<<< HEAD
     cout << "Какую площадь считаем? 1 - прямоугольник, 2 = треугольник, 3 - круг: ";
+=======
+    cout << "Êàêóþ ïëîùàäü ñ÷èòàåì? 1 - ïðÿìîóãîëüíèê, 2 = òðåóãîëüíèê, 3 - êðóã: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
     cin >> c;
 
     switch (c)
     {
         case 1:
         {
+<<<<<<< HEAD
             cout << "Введите длину и ширину прямоугольника: ";
             cin >> length >> width;
             double rectangleArea = calculateRectangleArea(length, width);
             cout << "Площадь прямоугольника: " << rectangleArea << endl;
+=======
+            cout << "Ââåäèòå äëèíó è øèðèíó ïðÿìîóãîëüíèêà: ";
+            cin >> length >> width;
+            double rectangleArea = calculateRectangleArea(length, width);
+            cout << "Ïëîùàäü ïðÿìîóãîëüíèêà: " << rectangleArea << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
             break;
         }
 
         case 2:
         {
+<<<<<<< HEAD
             cout << "Введите основание и высоту треугольника: ";
             cin >> base >> height;
             double triangleArea = calculateTriangleArea(base, height);
             cout << "Площадь треугольника: " << triangleArea << endl;
+=======
+            cout << "Ââåäèòå îñíîâàíèå è âûñîòó òðåóãîëüíèêà: ";
+            cin >> base >> height;
+            double triangleArea = calculateTriangleArea(base, height);
+            cout << "Ïëîùàäü òðåóãîëüíèêà: " << triangleArea << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
             break;
         }
         case 3:
         {
+<<<<<<< HEAD
             cout << "Введите радиус круга: ";
             cin >> radius;
             double circleArea = calculateCircleArea(radius);
             cout << "Площадь круга: " << circleArea << endl;
+=======
+            cout << "Ââåäèòå ðàäèóñ êðóãà: ";
+            cin >> radius;
+            double circleArea = calculateCircleArea(radius);
+            cout << "Ïëîùàäü êðóãà: " << circleArea << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
             break;
         }
         default: break;
@@ -175,7 +215,11 @@ int sinus() {
 
 int RomeToArabic() {
     string s;
+<<<<<<< HEAD
     cout << "Введите римское число: ";
+=======
+    cout << "Ââåäèòå ðèìñêîå ÷èñëî: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
     cin >> s;
     char letters[7] = { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
 
@@ -185,7 +229,11 @@ int RomeToArabic() {
             continue;
         }
         else {
+<<<<<<< HEAD
             cout << "Неправильный ввод" << endl;
+=======
+            cout << "Íåïðàâèëüíûé ââîä" << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
             return 0;
         }
     }
@@ -233,7 +281,11 @@ int RomeToArabic() {
             fin += 1000;
         }
         else {
+<<<<<<< HEAD
             cout << "Неправильный ввод числа: " << i + 1 << endl;
+=======
+            cout << "Íåïðàâèëüíûé ââîä ÷èñëà: " << i + 1 << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
             return 0;
         }
     }
@@ -245,7 +297,11 @@ int RomeToArabic() {
 
 int generator() {
     int m, b, c, i;
+<<<<<<< HEAD
     cout << "Введите m, b, c, i: ";
+=======
+    cout << "Ââåäèòå m, b, c, i: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
     cin >> m >> b >> c >> i;
 
     int* chisla{ new int[i] {0} };
@@ -308,7 +364,11 @@ int matrix() {
         }
     }
 
+<<<<<<< HEAD
     cout << "Продавец " << highSeller << " выручил больше всего денег с продажи: " << maxProfit << "\nПродавец " << lowSeller << " выручил меньше всего денег с продажи: " << minProfit << endl;
+=======
+    cout << "Ïðîäàâåö " << highSeller << " âûðó÷èë áîëüøå âñåãî äåíåã ñ ïðîäàæè: " << maxProfit << "\nÏðîäàâåö " << lowSeller << " âûðó÷èë ìåíüøå âñåãî äåíåã ñ ïðîäàæè: " << minProfit << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
 
 
     int highSeller2 = 0;
@@ -327,24 +387,39 @@ int matrix() {
         }
     }
 
+<<<<<<< HEAD
     cout << "Продавец " << highSeller2 << " выручил больше всего комисионных с продажи: " << maxComm << "\nПродавец " << lowSeller2 << " выручил меньше всего комисионных с продажи: " << minComm << endl;
+=======
+    cout << "Ïðîäàâåö " << highSeller2 << " âûðó÷èë áîëüøå âñåãî êîìèñèîííûõ ñ ïðîäàæè: " << maxComm << "\nÏðîäàâåö " << lowSeller2 << " âûðó÷èë ìåíüøå âñåãî êîìèñèîííûõ ñ ïðîäàæè: " << minComm << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
 
 
     double money = 0;
     for (int i = 0; i < 3; i++) {
         money += C[i][0];
     }
+<<<<<<< HEAD
     cout << "Общая сумма денег, вырученных за проданные товары: " << money << endl;
+=======
+    cout << "Îáùàÿ ñóììà äåíåã, âûðó÷åííûõ çà ïðîäàííûå òîâàðû: " << money << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
 
 
     double coms = 0;
     for (int i = 0; i < 3; i++) {
         coms += C[i][1];
     }
+<<<<<<< HEAD
     cout << "Всего комиссионных продавцы получили: " << coms << endl;
 
 
     cout << "Общая сумма денег, прошедшая руки продавцов: " << coms + money << endl;
+=======
+    cout << "Âñåãî êîìèññèîííûõ ïðîäàâöû ïîëó÷èëè: " << coms << endl;
+
+
+    cout << "Îáùàÿ ñóììà äåíåã, ïðîøåäøàÿ ðóêè ïðîäàâöîâ: " << coms + money << endl;
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
 
     return 0;
 }
@@ -441,7 +516,11 @@ string int_to_char(int symbol) {
 int converter() {
     string x;
     int ss_in, ss_out;
+<<<<<<< HEAD
     cout << "Введите число, его СС м CC, в котрую нужно перевести: ";
+=======
+    cout << "Ââåäèòå ÷èñëî, åãî ÑÑ ì CC, â êîòðóþ íóæíî ïåðåâåñòè: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
     cin >> x >> ss_in >> ss_out;
 
     int decX = 0;
@@ -469,7 +548,11 @@ int main4() {
     /*file();
 
     float x;
+<<<<<<< HEAD
     cout << "Введите x: ";
+=======
+    cout << "Ââåäèòå x: ";
+>>>>>>> 04bdcfa06d8d53fd785dd3ae86cf1af476143853
     cin >> x;
     sign(x);
 
