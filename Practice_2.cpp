@@ -12,22 +12,22 @@ int konus() {
     float R;
     float r;
 
-    cout << "Ââåäèòå âûñîòó, Âåğõíèé ğàäèóñ, íèæíèé ğàäèóñ: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¢Ã»Ã±Ã®Ã²Ã³, Ã‚Ã¥Ã°ÃµÃ­Ã¨Ã© Ã°Ã Ã¤Ã¨Ã³Ã±, Ã­Ã¨Ã¦Ã­Ã¨Ã© Ã°Ã Ã¤Ã¨Ã³Ã±: ";
     cin >> h >> R >> r;
 
     if (h <= 0 || R <= 0 || r <= 0) {
-        cout << "Íåïğàâèëüíî ââåäåíû äàííûå" << endl;
+        cout << "ÃÃ¥Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã® Ã¢Ã¢Ã¥Ã¤Ã¥Ã­Ã» Ã¤Ã Ã­Ã­Ã»Ã¥" << endl;
         return 0;
     }
     else if (r >= R) {
-        cout << "âõîäûå äàííûå íå îáğàçóşò óñå÷åííûé êîíóñ" << endl;
+        cout << "Ã¢ÃµÃ®Ã¤Ã»Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥ Ã­Ã¥ Ã®Ã¡Ã°Ã Ã§Ã³Ã¾Ã² Ã³Ã±Ã¥Ã·Ã¥Ã­Ã­Ã»Ã© ÃªÃ®Ã­Ã³Ã±" << endl;
         return 0;
     }
 
     float l = pow(pow(R - r, 2) + pow(h, 2), 0.5);
     double V = (M_PI * h * (R * R + R * r + r * r)) / 3;
     double S = M_PI * (R * R + (R + r) * l + r * r);
-    cout << setprecision(15) << "Îáúåì = " << V << "\nÏëîùàäü = " << S << endl;
+    cout << setprecision(15) << "ÃÃ¡ÃºÃ¥Ã¬ = " << V << "\nÃÃ«Ã®Ã¹Ã Ã¤Ã¼ = " << S << endl;
     return 0;
 }
 
@@ -35,11 +35,11 @@ int razvetvlenie() {
     int x;
     int a;
 
-    cout << "Ââåäèòå x è a: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ x Ã¨ a: ";
     cin >> x >> a;
 
     if (x == 0) {
-        cout << "õ íå ìîæåò áûòü ğàâåí íóëş" << endl;
+        cout << "Ãµ Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã°Ã Ã¢Ã¥Ã­ Ã­Ã³Ã«Ã¾" << endl;
         return 0;
     }
 
@@ -52,7 +52,7 @@ int razvetvlenie() {
         return 0;
     }
     else {
-        cout << "Íåò ğåøåíèé" << endl;
+        cout << "ÃÃ¥Ã² Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã©" << endl;
         return 0;
     }
     return 0;
@@ -63,7 +63,7 @@ int func() {
     int y;
     int b;
 
-    cout << "Ââåäèòå õ, y, b: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ãµ, y, b: ";
     cin >> x >> y >> b;
 
     if (b - y > 0 && b - x >= 0) {
@@ -71,7 +71,7 @@ int func() {
         return 0;
     }
     else {
-        cout << "Íåò ğåøåíèé" << endl;
+        cout << "ÃÃ¥Ã² Ã°Ã¥Ã¸Ã¥Ã­Ã¨Ã©" << endl;
         return 0;
     }
     return 0;
@@ -79,7 +79,7 @@ int func() {
 
 int poriadok() {
     int N;
-    cout << "Ââåäèòå N: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ N: ";
     cin >> N;
 
     if (N <= 0) {
