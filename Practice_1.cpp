@@ -6,7 +6,7 @@ using namespace std;
 #include <string>
 
 int name() {
-    for (int i = 0; i <= 5; i++) { 
+    for (int i = 0; i <= 5; i++) {
         std::cout << "Алексей\n";
     }
     return 0;
