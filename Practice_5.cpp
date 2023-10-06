@@ -99,7 +99,7 @@ int riadi1() {
     cin >> n;
 
     double a;
-    cout << "Введите a:";
+    cout << "Введите a: ";
     cin >> a;
 
     long double x = 0.0;
@@ -133,6 +133,197 @@ int riad2() {
 
     return 0;
 }
+
+
+int matrix() {
+    int N = 0;
+    cout << "Введите порядок для матриц: ";
+    cin >> N;
+
+
+    int **A = new int* [N];
+    
+    for (int i = 0; i < N; i++) {
+        A[i] = new int[N];
+    }
+    
+    int** B = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        B[i] = new int[N];
+    }
+
+    int** E = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        E[i] = new int[N];
+    }
+
+    double** C = new double* [N];
+
+    for (int i = 0; i < N; i++) {
+        C[i] = new double[N];
+    }
+
+    double** res = new double* [N];
+
+    for (int i = 0; i < N; i++) {
+        res[i] = new double[N];
+    }
+
+    int** res2 = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        res2[i] = new int[N];
+    }
+    
+    ////////////////////////////////////////// заполнение
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            A[i][j] = rand() % 50;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            B[i][j] = rand() % 50;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (i == j) {
+                E[i][j] = 1;
+            }
+            else {
+                E[i][j] = 0;
+            }
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            C[i][j] = 1.0 / (i + j + 2);
+        }
+    }
+    ////////////////////////////////////////// вывод
+
+    cout << "Матрица А:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << A[i][j]<< "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+    cout << "Матрица B:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << B[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+    cout << "Матрица E:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << E[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+    cout << "Матрица C:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << setprecision(3) << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+    ////////////////////////////////////////// вычисления
+
+    cout << "Матрица B - E:" << endl;
+    
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            res[i][j] = B[i][j] - E[i][j];
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+
+    cout << "Матрица A(B - E):" << endl;
+    
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            int pr = 0;
+            for (int k = 0; k < N; k++) {
+                pr += A[i][k] * res[k][j];
+            }
+            res2[i][j] = pr;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res2[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+
+    cout << "Матрица A(B - E) - C:" << endl;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            double x = res[i][j];
+            double y = C[i][j];
+            res[i][j] = x - y;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << " " << endl;
+
+    ////////////////////////////////////////// очистка
+
+    for (int i = 0; i < N; i++) {
+        delete[] A[i];
+        delete[] B[i];
+        delete[] C[i];
+        delete[] E[i];
+        delete[] res[i];
+        delete[] res2[i];
+    }
+
+    delete[] A;
+    delete[] B;
+    delete[] E;
+    delete[] C;
+    delete[] res;
+    delete[] res2;
+
+    return 0;
+}
+
 
 int olimp() {
     ofstream file;
@@ -175,7 +366,7 @@ int olimp() {
     map<int, string> countries;
 
     ifstream in;
-    in.open("D:/mirea/Project1/Project1/Olimpiada.txt");
+    in.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
 
     while (!in.eof())
     {
@@ -191,7 +382,7 @@ int olimp() {
 
 
     ofstream offile;
-    offile.open("D:/mirea/Project1/Project1/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
+    offile.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
 
     for (auto& i : countries) {
         offile << i.second << endl;
@@ -201,7 +392,7 @@ int olimp() {
 
 
     ifstream in2;
-    in2.open("D:/mirea/Project1/Project1/Olimpiada.txt");
+    in2.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
 
     cout << setw(10) << " " << setw(10) << "Страна" << setw(10) << "Золото" << setw(10) << "Серебро" << setw(10) << "Бронза" << endl;
 
@@ -244,9 +435,13 @@ int main() {
 
     riadi1();
 
-    riad2();*/
+    riad2();
 
-    olimp();
+    olimp();*/
+
+    matrix();
+    cout << setprecision(3) << 0.02345<< endl;
+    cout << setprecision(3) << 0.12345;
 
     return 0;
 }
