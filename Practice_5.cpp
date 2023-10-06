@@ -34,7 +34,7 @@ int evclid() {
     }
 
     cout << "Наибольший общий делитель с помощью деления: " << gcd_div << endl;
-    cout << "Наибольший общий делитель с помощью вычитания: " << gcd_sub << endl;
+    cout << "Наибольший общий делитель с помощью вычитания: " << gcd_sub;
 
     return 0;
 }
@@ -63,7 +63,7 @@ int eretocfen() {
 int askii() {
     string text;
     cout << "Введите текст: ";
-    getline(cin, text);
+    cin >> text;
 
     string ascii_codes;
     for (char c : text) {
@@ -85,6 +85,7 @@ int setInFile() {
     }
 
     string line = "_";
+    cout << "Введите строки для ввода в файл:";
     while (getline(cin, line) && line != "") {
         file << line << endl;
     }
@@ -141,12 +142,12 @@ int matrix() {
     cin >> N;
 
 
-    int **A = new int* [N];
-    
+    int** A = new int* [N];
+
     for (int i = 0; i < N; i++) {
         A[i] = new int[N];
     }
-    
+
     int** B = new int* [N];
 
     for (int i = 0; i < N; i++) {
@@ -176,7 +177,7 @@ int matrix() {
     for (int i = 0; i < N; i++) {
         res2[i] = new int[N];
     }
-    
+
     ////////////////////////////////////////// заполнение
 
     for (int i = 0; i < N; i++) {
@@ -212,7 +213,7 @@ int matrix() {
     cout << "Матрица А:" << endl;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            cout << A[i][j]<< "\t";
+            cout << A[i][j] << "\t";
         }
         cout << endl;
     }
@@ -248,7 +249,7 @@ int matrix() {
     ////////////////////////////////////////// вычисления
 
     cout << "Матрица B - E:" << endl;
-    
+
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             res[i][j] = B[i][j] - E[i][j];
@@ -265,7 +266,7 @@ int matrix() {
 
 
     cout << "Матрица A(B - E):" << endl;
-    
+
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             int pr = 0;
@@ -302,6 +303,57 @@ int matrix() {
         cout << endl;
     }
     cout << " " << endl;
+
+    ////////////////////////////////////////// запись в файл
+
+    ofstream file;
+    file.open("Matrix.txt");
+
+    file << "Матрица А:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            file << A[i][j] << "\t";
+        }
+        file << endl;
+    }
+    file << " " << endl;
+
+    file << "Матрица B:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            file << B[i][j] << "\t";
+        }
+        file << endl;
+    }
+    file << " " << endl;
+
+    file << "Матрица E:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            file << E[i][j] << "\t";
+        }
+        file << endl;
+    }
+    file << " " << endl;
+
+    file << "Матрица C:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            file << setprecision(3) << C[i][j] << "\t";
+        }
+        file << endl;
+    }
+    file << " " << endl;
+
+    file << "Матрица A(B - E) - C:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            file << res[i][j] << "\t";
+        }
+        file << endl;
+    }
+
+    file.close();
 
     ////////////////////////////////////////// очистка
 
@@ -366,7 +418,7 @@ int olimp() {
     map<int, string> countries;
 
     ifstream in;
-    in.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
+    in.open("D:/mirea/Project1/Project1/Olimpiada.txt");
 
     while (!in.eof())
     {
@@ -382,7 +434,7 @@ int olimp() {
 
 
     ofstream offile;
-    offile.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
+    offile.open("D:/mirea/Project1/Project1/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
 
     for (auto& i : countries) {
         offile << i.second << endl;
@@ -392,7 +444,7 @@ int olimp() {
 
 
     ifstream in2;
-    in2.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
+    in2.open("D:/mirea/Project1/Project1/Olimpiada.txt");
 
     cout << setw(10) << " " << setw(10) << "Страна" << setw(10) << "Золото" << setw(10) << "Серебро" << setw(10) << "Бронза" << endl;
 
@@ -424,24 +476,30 @@ int olimp() {
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    /*
+    
+    setInFile();
+    cout << " " << endl;
+
     evclid();
+    cout << " " << endl;
 
     eretocfen();
+    cout << " " << endl;
 
     askii();
-
-    setInFile();
+    cout << " " << endl;
 
     riadi1();
+    cout << " " << endl;
 
     riad2();
+    cout << " " << endl;
 
-    olimp();*/
+    olimp();
+    cout << " " << endl;
 
     matrix();
-    cout << setprecision(3) << 0.02345<< endl;
-    cout << setprecision(3) << 0.12345;
+    cout << " " << endl;
 
     return 0;
 }
