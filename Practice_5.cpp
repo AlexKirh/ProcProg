@@ -121,15 +121,16 @@ int riad2() {
     double numbers[5];
     double sum = 0;
     double average;
-
+    int n = 0;
     for (int i = 0; i < 5; i++) {
         std::cout << "Введите " << i + 1 << " число: ";
         std::cin >> numbers[i];
 
         sum += numbers[i];
         average = sum / (i + 1);
+        n += 1;
 
-        std::cout << "Среднее арифметическое полученной части последовательности: " << average << std::endl;
+        std::cout << "Ведено чисел: " << n << " " << "Сумма = " << sum << " " << "Среднее арифметическое полученной части последовательности: " << average << std::endl;
     }
 
     return 0;
@@ -415,26 +416,36 @@ int olimp() {
     file.close();
 
 
-    map<int, string> countries;
+    map<double, string> countries;
 
     ifstream in;
-    in.open("D:/mirea/Project1/Project1/Olimpiada.txt");
+    in.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
 
     while (!in.eof())
     {
         string str;
         getline(in, str);
         string points_S = str.substr(str.rfind(" ") + 1, size(str));
-        int points = atoi(points_S.c_str());
+        double points = atoi(points_S.c_str());
+
         if (points != 0) {
-            countries[1000000000 - points] = str;
+            if (countries.count(1000000000.0 - points)) {
+                while (countries.count(1000000000.0 - points))
+                {
+                    points -= 0.000001;
+                }
+                countries[1000000000.0 - points] = str;
+            }
+            else {
+                countries[1000000000.0 - points] = str;
+            }
         }
     }
     in.close();
 
 
     ofstream offile;
-    offile.open("D:/mirea/Project1/Project1/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
+    offile.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt", std::ofstream::out | std::ofstream::trunc);
 
     for (auto& i : countries) {
         offile << i.second << endl;
@@ -444,7 +455,7 @@ int olimp() {
 
 
     ifstream in2;
-    in2.open("D:/mirea/Project1/Project1/Olimpiada.txt");
+    in2.open("C:/Users/Admin/Documents/mirea/Project3/Project3/Olimpiada.txt");
 
     cout << setw(10) << " " << setw(10) << "Страна" << setw(10) << "Золото" << setw(10) << "Серебро" << setw(10) << "Бронза" << endl;
 
@@ -470,36 +481,38 @@ int olimp() {
             cout << endl;
         }
     }
-
+    in2.close();
     return 0;
 }
 
+
+
 int main() {
     setlocale(LC_ALL, "Russian");
-    
-    setInFile();
-    cout << " " << endl;
 
-    evclid();
-    cout << " " << endl;
+    //setInFile();
+    //cout << " " << endl;
+
+    //evclid();
+    //cout << " " << endl;
 
     eretocfen();
     cout << " " << endl;
 
-    askii();
-    cout << " " << endl;
+    //askii();
+    //cout << " " << endl;
 
-    riadi1();
-    cout << " " << endl;
+    //riadi1();
+    //cout << " " << endl;
 
-    riad2();
-    cout << " " << endl;
+    //riad2();
+    //cout << " " << endl;
 
-    olimp();
-    cout << " " << endl;
+    //olimp();
+    //cout << " " << endl;
 
-    matrix();
-    cout << " " << endl;
+    //matrix();
+    //cout << " " << endl;
 
     return 0;
 }

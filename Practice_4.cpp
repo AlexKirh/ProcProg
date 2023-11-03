@@ -464,7 +464,7 @@ using namespace std;
 
 
 
-int main4() {
+int main() {
     setlocale(LC_ALL, "Russian");
     /*file();
 
@@ -475,12 +475,13 @@ int main4() {
 
     areas();*/
 
-    whiteGlory();
+    //whiteGlory();
     /*sinus();
     RomeToArabic();
     generator();
     converter();
     gotoxy(0, 65);*/
+    matrix();
     return 0;
 
 }
