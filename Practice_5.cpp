@@ -1,48 +1,308 @@
-﻿#include <iostream>;
+﻿#include <iostream>
+#include <cmath>
 #include <clocale>;
+#include <string>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <algorithm>
+#include <iomanip>;
 using namespace std;
 
+int evclid() {
+    int a, b;
+    cout << "Введите два числа: ";
+    cin >> a >> b;
 
-int kino() {
-    int n, k;
-    cout << "Введите кол-во сиденьев и кол-во школьников: ";
-    cin >> n >> k;
-
-    int iter = 0;
-
-    while (pow(2, iter + 1) < k)
-    {
-        iter += 1;
+    int gcd_div = 1;
+    for (int i = 2; i <= min(a, b); i++) {
+        if (a % i == 0 && b % i == 0) {
+            gcd_div = i;
+        }
     }
 
-    bool chetnost = (n%2 == 0);
-    cout << chetnost;
-    
+    int gcd_sub = 1;
+    while (a != b) {
+        if (a > b) {
+            a -= b;
+        }
+        else {
+            b -= a;
+        }
+        gcd_sub = a;
+    }
+
+    cout << "Наибольший общий делитель с помощью деления: " << gcd_div << endl;
+    cout << "Наибольший общий делитель с помощью вычитания: " << gcd_sub;
+
     return 0;
 }
 
-int main() {
-    setlocale(LC_ALL, "Russian");
+int eretocfen() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
 
-    setInFile();
+    cout << "Простые числа в диапазоне от 2 до " << n << ":" << endl;
+    for (int i = 2; i <= n; i++) {
+        bool is_prime = true;
+        for (int j = 2; j <= sqrt(i); j++) {
+            if (i % j == 0) {
+                is_prime = false;
+                break;
+            }
+        }
+        if (is_prime) {
+            cout << i << " ";
+        }
+    }
+    return 0;
+}
+
+int askii() {
+    string text;
+    cout << "Введите текст: ";
+    cin >> text;
+
+    string ascii_codes;
+    for (char c : text) {
+        ascii_codes += to_string(int(c)) + " ";
+    }
+
+    cout << "Цепочка ASCII-кодов: " << ascii_codes << endl;
+
+    return 0;
+}
+
+int setInFile() {
+    ofstream file;
+    file.open("textfile.txt");
+
+    if (!file.is_open()) {
+        cerr << "Невозможно открыть файл для записи" << endl;
+        return 1;
+    }
+
+    string line = "_";
+    cout << "Введите строки для ввода в файл:";
+    while (getline(cin, line) && line != "") {
+        file << line << endl;
+    }
+
+    file.close();
+    return 0;
+}
+
+int riadi1() {
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    double a;
+    cout << "Введите a: ";
+    cin >> a;
+
+    long double x = 0.0;
+    for (int i = 1; i <= n + 1; i++) {
+        double chislitel = i;
+        long double znamenatel = a;
+        for (int j = 1; j <= i - 1; j++) {
+            znamenatel *= (a + j);
+        }
+        x += (chislitel / znamenatel);
+    }
+    cout << "y = " << x;
+
+    return 0;
+}
+
+int riad2() {
+    double numbers[5];
+    double sum = 0;
+    double average;
+    int n = 0;
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Введите " << i + 1 << " число: ";
+        std::cin >> numbers[i];
+
+        sum += numbers[i];
+        average = sum / (i + 1);
+        n += 1;
+
+        std::cout << "Ведено чисел: " << n << " " << "Сумма = " << sum << " " << "Среднее арифметическое полученной части последовательности: " << average << std::endl;
+    }
+
+    return 0;
+}
+
+
+int matrix() {
+    int N = 0;
+    cout << "Введите порядок для матриц: ";
+    cin >> N;
+
+
+    int** A = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        A[i] = new int[N];
+    }
+
+    int** B = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        B[i] = new int[N];
+    }
+
+    int** E = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        E[i] = new int[N];
+    }
+
+    double** C = new double* [N];
+
+    for (int i = 0; i < N; i++) {
+        C[i] = new double[N];
+    }
+
+    double** res = new double* [N];
+
+    for (int i = 0; i < N; i++) {
+        res[i] = new double[N];
+    }
+
+    int** res2 = new int* [N];
+
+    for (int i = 0; i < N; i++) {
+        res2[i] = new int[N];
+    }
+
+    ////////////////////////////////////////// заполнение
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            A[i][j] = rand() % 50;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            B[i][j] = rand() % 50;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (i == j) {
+                E[i][j] = 1;
+            }
+            else {
+                E[i][j] = 0;
+            }
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            C[i][j] = 1.0 / (i + j + 2);
+        }
+    }
+    ////////////////////////////////////////// вывод
+
+    cout << "Матрица А:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << A[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
-    evclid();
+    cout << "Матрица B:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << B[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
-    eretocfen();
+    cout << "Матрица E:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << E[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
-    askii();
+    cout << "Матрица C:" << endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << setprecision(3) << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
-    riadi1();
+    ////////////////////////////////////////// вычисления
+
+    cout << "Матрица B - E:" << endl;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            res[i][j] = B[i][j] - E[i][j];
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
-    riad2();
+
+    cout << "Матрица A(B - E):" << endl;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            int pr = 0;
+            for (int k = 0; k < N; k++) {
+                pr += A[i][k] * res[k][j];
+            }
+            res2[i][j] = pr;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res2[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
-     
-    olimp();
+
+
+    cout << "Матрица A(B - E) - C:" << endl;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            double x = res[i][j];
+            double y = C[i][j];
+            res[i][j] = x - y;
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << res[i][j] << "\t";
+        }
+        cout << endl;
+    }
     cout << " " << endl;
 
     ////////////////////////////////////////// запись в файл
@@ -230,29 +490,29 @@ int olimp() {
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    setInFile();
-    cout << " " << endl;
+    //setInFile();
+    //cout << " " << endl;
 
-    evclid();
-    cout << " " << endl;
+    //evclid();
+    //cout << " " << endl;
 
     eretocfen();
     cout << " " << endl;
 
-    askii();
-    cout << " " << endl;
+    //askii();
+    //cout << " " << endl;
 
-    riadi1();
-    cout << " " << endl;
+    //riadi1();
+    //cout << " " << endl;
 
-    riad2();
-    cout << " " << endl;
+    //riad2();
+    //cout << " " << endl;
 
-    olimp();
-    cout << " " << endl;
+    //olimp();
+    //cout << " " << endl;
 
-    matrix();
-    cout << " " << endl;
+    //matrix();
+    //cout << " " << endl;
 
     return 0;
 }
