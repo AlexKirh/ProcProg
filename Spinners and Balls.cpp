@@ -133,16 +133,27 @@ int kino() {
     cout << "Введите кол-во сиденьев и кол-во школьников: ";
     cin >> n >> k;
 
-    int iter = 0;
-
-    while (pow(2, iter + 1) < k)
-    {
-        iter += 1;
+    if (k > n) {
+        cout << "Мест не хватило" << endl;
+        return 0;
     }
 
-    bool chetnost = false;
+    vector<int> promezutki{ n };
 
+    int left = 0;
+    int right = 0;
 
+    for (int i = 0; i < k; i++) {
+        int max_l = promezutki.back();
+
+        left = max_l / 2;
+        right = (max_l != 1) ? ((max_l % 2 != 0) ? max_l / 2 : max_l / 2 - 1) : (0);
+        promezutki[promezutki.size() - 1] = right;
+        promezutki.push_back(left);
+
+        sort(promezutki.begin(), promezutki.end());
+    }
+    cout << "Мест с одной стороны: " << right << " С другой: " << left;
     return 0;
 }
 
@@ -153,5 +164,6 @@ int main() {
     spinners_2();
     sasha();
     plackart();
+    kino();
     return 0;
 }

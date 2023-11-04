@@ -490,29 +490,29 @@ int olimp() {
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    //setInFile();
-    //cout << " " << endl;
+    setInFile();
+    cout << " " << endl;
 
-    //evclid();
-    //cout << " " << endl;
+    evclid();
+    cout << " " << endl;
 
     eretocfen();
     cout << " " << endl;
 
-    //askii();
-    //cout << " " << endl;
+    askii();
+    cout << " " << endl;
 
-    //riadi1();
-    //cout << " " << endl;
+    riadi1();
+    cout << " " << endl;
 
-    //riad2();
-    //cout << " " << endl;
+    riad2();
+    cout << " " << endl;
+     
+    olimp();
+    cout << " " << endl;
 
-    //olimp();
-    //cout << " " << endl;
-
-    //matrix();
-    //cout << " " << endl;
+    matrix();
+    cout << " " << endl;
 
     return 0;
 }
