@@ -1,5 +1,7 @@
-﻿#include <iostream>
-#include <clocale>
+﻿#include <iostream>;
+#include <clocale>;
+#include <vector>;
+#include <algorithm>;
 using namespace std;
 
 class Counter {
@@ -66,7 +68,7 @@ int spinners_1() {
 
 int spinners_2() {
     int m;
-    cout << "Введите кол-во ллпастей: ";
+    cout << "Введите кол-во лопастей: ";
     cin >> m;
     int lop4 = m % 3;
     int lop3 = (m - 4 * lop4) / 3;
@@ -95,7 +97,6 @@ int sasha() {
     cout << "Кол-во: " << s << endl;
     return 0;
 }
-
 
 int coupe_num(int k) {
     if (k > 36) {
