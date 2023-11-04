@@ -68,7 +68,7 @@ int spinners_1() {
 
 int spinners_2() {
     int m;
-    cout << "Введите кол-во ллпастей: ";
+    cout << "Введите кол-во лопастей: ";
     cin >> m;
     int lop4 = m % 3;
     int lop3 = (m - 4 * lop4) / 3;
@@ -154,7 +154,7 @@ int kino() {
 
         sort(promezutki.begin(), promezutki.end());
     }
-    cout << right << " " << left;
+    cout << "Мест с одной стороны: " << right << " С другой: " << left;
     return 0;
 }
 
